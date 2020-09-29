@@ -131,7 +131,7 @@ class My_Widget extends WP_Widget{
     function update($new_instance, $old_instance) {
         if(empty($new_instance['team_img']) 
         || empty($new_instance['team_name'])
-        || empty($new_instance['team_name'])){
+        || empty($new_instance['team_rol'])){
             return false;
         }
         return $new_instance;
