@@ -15,7 +15,7 @@ $dir = get_template_directory();
 add_action( 'widgets_init', function () {
 	register_widget( 'My_Widget' );  //WidgetをWordPressに登録する
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'news 1',
+		'name'          => 'tour 1',
 		'id'            => 'my_sidebar_1',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -23,7 +23,7 @@ add_action( 'widgets_init', function () {
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'news 2',
+		'name'          => 'tour 2',
 		'id'            => 'my_sidebar_2',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -31,7 +31,7 @@ add_action( 'widgets_init', function () {
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'news 3',
+		'name'          => 'tour 3',
 		'id'            => 'my_sidebar_3',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -39,7 +39,7 @@ add_action( 'widgets_init', function () {
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'news 4',
+		'name'          => 'tour 4',
 		'id'            => 'my_sidebar_4',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -58,8 +58,8 @@ class My_Widget extends WP_Widget{
 	function __construct() {
 		parent::__construct(
 			'my_widget', // Base ID
-			'image', // Name
-			array( 'description' => '概要', ) // Args
+			'中身', // Name
+			array( 'description' => 'ツアー用', ) // Args
 		);
 	}
 
@@ -115,7 +115,7 @@ class My_Widget extends WP_Widget{
             <input class="widefat" id="<?php echo $team_name_id; ?>" name="<?php echo $team_name_name; ?>" type="text" value="<?php echo esc_attr( $team_name ); ?>">
         </p>
         <p>
-            <label for="<?php echo $team_rol_id; ?>">news:</label>
+            <label for="<?php echo $team_rol_id; ?>">presen:</label>
             <input class="widefat" id="<?php echo $team_rol_id; ?>" name="<?php echo $team_rol_name; ?>" type="text" value="<?php echo esc_attr( $team_rol ); ?>">
         </p>
  <?php
