@@ -15,7 +15,7 @@ $dir = get_template_directory();
 add_action( 'widgets_init', function () {
 	register_widget( 'My_Widget' );  //WidgetをWordPressに登録する
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TEAM 1',
+		'name'          => 'news 1',
 		'id'            => 'my_sidebar_1',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -23,7 +23,7 @@ add_action( 'widgets_init', function () {
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TEAM 2',
+		'name'          => 'news 2',
 		'id'            => 'my_sidebar_2',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -31,7 +31,7 @@ add_action( 'widgets_init', function () {
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TEAM 3',
+		'name'          => 'news 3',
 		'id'            => 'my_sidebar_3',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -39,7 +39,7 @@ add_action( 'widgets_init', function () {
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TEAM 4',
+		'name'          => 'news 4',
 		'id'            => 'my_sidebar_4',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -58,8 +58,8 @@ class My_Widget extends WP_Widget{
 	function __construct() {
 		parent::__construct(
 			'my_widget', // Base ID
-			'スタッフ画像', // Name
-			array( 'description' => 'スタッフの紹介', ) // Args
+			'image', // Name
+			array( 'description' => '概要', ) // Args
 		);
 	}
 
@@ -76,7 +76,7 @@ class My_Widget extends WP_Widget{
     $team_rol = $instance['team_rol'];
 		echo $args['before_widget'];
 
-        echo '<img width="270" height="270" src="',$uri,'/images/pages/',$team_img,'" alt=""/></a> ';
+        echo '<img width="270" height="270" src="',$uri,'/images/pages/',$team_img,'" alt=""/> ';
         echo '
         <div class="thumbnail-desc">
         <h5 class="thumbnail-josip-title text-bold text-white">',$team_name,'</h5>
@@ -107,15 +107,15 @@ class My_Widget extends WP_Widget{
         $team_rol_id = $this->get_field_id('team_rol');
  ?>
         <p>
-            <label for="<?php echo $team_img_id; ?>">スタッフ顔写真:</label>
+            <label for="<?php echo $team_img_id; ?>">image:</label>
             <input class="widefat" id="<?php echo $team_img_id; ?>" name="<?php echo $team_img_name; ?>" type="text" value="<?php echo esc_attr( $team_img ); ?>">
         </p>
         <p>
-            <label for="<?php echo $team_name_id; ?>">スタッフ名:</label>
+            <label for="<?php echo $team_name_id; ?>">title:</label>
             <input class="widefat" id="<?php echo $team_name_id; ?>" name="<?php echo $team_name_name; ?>" type="text" value="<?php echo esc_attr( $team_name ); ?>">
         </p>
         <p>
-            <label for="<?php echo $team_rol_id; ?>">役割,部署:</label>
+            <label for="<?php echo $team_rol_id; ?>">news:</label>
             <input class="widefat" id="<?php echo $team_rol_id; ?>" name="<?php echo $team_rol_name; ?>" type="text" value="<?php echo esc_attr( $team_rol ); ?>">
         </p>
  <?php
